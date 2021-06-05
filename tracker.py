@@ -9,23 +9,29 @@ import os
 
 class VaccineTracker:
     '''Tracks Vaccine Slots for the given state and districts'''
+
     def __init__(self,state_id=9):
         '''Default State ID is set to Delhi i.e. 9. 
-        To check your State's ID call the class without any parameters and run the get_state_id function'''
+        To check your State's ID call the get_states_with_id function'''
+
         self.cowin=CoWinAPI()
         self.states=self.cowin.get_states()
         self.districts=self.cowin.get_districts(state_id)
         
     def create_notification(self,notification_title,content,icon='',no_of_seconds=10):
+        '''Creates Desktop Notification'''
+
         notification.notify(title=notification_title,message=content,app_icon=icon,timeout=no_of_seconds)
     
     def get_state_id(self,state_name):
-
+        '''Gets the state's id for the given state name''' 
+        
         for state in self.states['states']:
             if state['state_name'].lower()==state_name.lower():
                 return state['state_id']
 
     def get_district_id(self,district_name):
+        '''Gets the district id with the district name provided'''
 
         for district in self.districts['districts']:
             if district['district_name'].lower()==district_name.lower():
