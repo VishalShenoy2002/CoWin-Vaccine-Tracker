@@ -3,11 +3,10 @@ This Tracker is used to track slots from Cowin Website. It has a class called Va
 
 ## Modules Used
 The Modules used in this project are as Follows:
-1.cowin_api
-2.datetime
-3.time
-4.csv
-5.plyer
+ Markup : 1. cowin_api
+        2. A nested numbered list
+        3. Which is numbered
+        4. Which is numbered
 
 ## Setup
 If there is an ImportError please do the following:
